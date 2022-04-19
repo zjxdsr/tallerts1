@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <style>
+          .topnav {
+            overflow: hidden;
+            background-color: rgb(0, 151, 146);
+          }
+        </style>
+    </head>
+    <div class="topnav">
+      <h3>TV Series</h3>
+    </div>
+    <body>
+    
+    <div class="container">
+      <div class="row"> 
+        <div class="col"> 
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>#</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Handle</th>
+              </tr>
+            </thead>
+            <tbody id="series">
+            </tbody>
+          </table>
+          <div class="row justify-content-end">
+            <h5 class="col-4"><strong>Seasons average</strong></h5>
+            <h5 class="col-4" id="seasons-average"><strong></strong></h5>
+        </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" id="seasonimg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./scripts/Data.ts" ></script>
+    <script type="module" src="./scripts/Serie.js" ></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>
