@@ -12,7 +12,7 @@ function renderSeriesInTable(series: Serie[]): void {
     series.forEach(s => {
         let trElement = document.createElement("tr");
         trElement.innerHTML =   `<td>${s.num}</td>
-                                <td>${s.name}</td>
+                                <td onclick="a()">${s.name}</td>
                                 <td>${s.channel}</td>
                                 <td>${s.seasons}</td>`;
         seriesTbody.appendChild(trElement);
@@ -27,6 +27,11 @@ function getAverageSeasons(series: Serie[]): number {
     return average;
   }
 
-function getSeriesImg(serie: ): string {
+function getSeriesImg(serie: Serie): string {
+    let linkbuscado: string = serie.photo;
+    return linkbuscado;
+}
+
+function getSeriesDataToDisplay():void {
 
 }
