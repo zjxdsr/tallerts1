@@ -8,7 +8,7 @@ export class Serie {
     desc:string;
     photo:string;
 
-    constructor(num:number, name:string, channel:string, seasons:number, link:string, desc:string, photo:string) {
+    constructor(num:number, name:string, channel:string, seasons:number, desc:string, link:string, photo:string) {
         this.num = num;
         this.name = name;
         this.channel = channel;

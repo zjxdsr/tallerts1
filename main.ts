@@ -1,21 +1,25 @@
-import { Serie } from "./Serie";
+import { Serie } from "./Serie.js";
 
-import { series } from "./Data";
+import { data } from "./data.js";
 
 const seriesTbody: HTMLElement = document.getElementById('series')!;
 const seasonsAveragedata: HTMLElement = document.getElementById("seasons-average")!; 
-const serieimg: HTMLElement = document.getElementById("serieimg")!; 
 
-renderSeriesInTable(series);
+renderSeriesInTable(data);
+seasonsAveragedata.innerHTML = `${getAverageSeasons(data)}`
 
 function renderSeriesInTable(series: Serie[]): void {
-    series.forEach(s => {
+    var i = 0;
+    series.forEach((s) => {
         let trElement = document.createElement("tr");
-        trElement.innerHTML =   `<td>${s.num}</td>
-                                <td onclick="a()">${s.name}</td>
+        trElement.innerHTML =  `<td><b>${s.num}</b></td>
+                                <td numserie="${i}"><a href="#">${s.name}</a></td>
                                 <td>${s.channel}</td>
                                 <td>${s.seasons}</td>`;
         seriesTbody.appendChild(trElement);
+        let c : HTMLElement = trElement.cells[1];
+        c.addEventListener("click", loadSeries);                           
+        i++;
     });
 }
 
@@ -27,11 +31,22 @@ function getAverageSeasons(series: Serie[]): number {
     return average;
   }
 
-function getSeriesImg(serie: Serie): string {
-    let linkbuscado: string = serie.photo;
-    return linkbuscado;
-}
 
-function getSeriesDataToDisplay():void {
+function loadSeries(this:HTMLElement, ev:MouseEvent){
+    var nserie = this.getAttribute("numserie");
+    if (nserie == null) 
+        return;
+    else 
+        var num:number = parseInt(nserie);
+    
+    let photo:HTMLImageElement = document.getElementById('sphoto')! as HTMLImageElement;
+    let name:HTMLElement = document.getElementById('sname')!;
+    let desc:HTMLElement = document.getElementById('sdesc')!;
+    let btnlink:HTMLButtonElement = document.getElementById('slink')! as HTMLButtonElement;
 
+    photo.src = data[num].photo;
+    name.innerHTML = data[num].name;
+    desc.innerHTML = data[num].desc;
+    btnlink.innerText = 'Go watch';
+    btnlink.setAttribute('onclick', "window.location.href='"+data[num].link+"';");
 }

@@ -1,10 +1,12 @@
 var Serie = /** @class */ (function () {
-    function Serie(num, name, channel, seasons, link) {
+    function Serie(num, name, channel, seasons, desc, link, photo) {
         this.num = num;
         this.name = name;
         this.channel = channel;
         this.seasons = seasons;
         this.link = link;
+        this.desc = desc;
+        this.photo = photo;
     }
     Serie.prototype.getnum = function () { return this.num; };
     Serie.prototype.getname = function () { return this.name; };

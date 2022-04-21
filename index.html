@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 
-<html lang="es">
+<html lang="en">
     <head>
-        <style>
-          .topnav {
-            overflow: hidden;
-            background-color: rgb(0, 151, 146);
-          }
-        </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <title>TallerTypeScript2</title>
     </head>
-    <div class="topnav">
-      <h3>TV Series</h3>
-    </div>
+
     <body>
-    
-    <div class="container">
-      <div class="row"> 
-        <div class="col"> 
+      <div class="container">
+        <div class="row">
+            <table class="table">
+            </table>
+        </div>
+        <div class="row">
           <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th>#</th>
-                <th>First</th>
-                <th>Last</th>
-                <th>Handle</th>
+            <thead>
+              <tr class="bg-info">
+                <th scope="col">
+                  <img src="./logo.jpg" height="25px" width="25px" alt="TV">TV Series
+                </th>
               </tr>
             </thead>
-            <tbody id="series">
-            </tbody>
           </table>
-          <div class="row justify-content-end">
-            <h5 class="col-4"><strong>Seasons average</strong></h5>
-            <h5 class="col-4" id="seasons-average"><strong></strong></h5>
         </div>
-        </div>
-        <div class="col">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" id="seasonimg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+
+      <div class="container">
+        <div class="row"> 
+          <div class="col"> 
+            <table class="table">
+              <caption>Seasons avarage: <a id="seasons-average"></a></caption>
+              <thead">
+                <tr>
+                  <th scope="col" width="10px"><b>#</b></th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Channel</th>
+                  <th scope="col">Seasons</th>
+                </tr>
+              </thead>
+              <tbody id="series" style="background-color:#f5f5f5;">
+              </tbody>
+            </table>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" id="sphoto" src="https://www.pixelstalk.net/wp-content/uploads/2016/10/Blue-Blank-Image.jpg">
+              <div class="card-body">
+                <h5 class="card-title" id="sname">Please select a series</h5>
+                <p class="card-text" id="sdesc" ></p>
+                <a href="#" class="btn btn-primary" id="slink"></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <script type="module" src="./scripts/Data.ts" ></script>
-    <script type="module" src="./scripts/Serie.js" ></script>
-    <script type="module" src="./scripts/main.js"></script>
-    <script>
-      function a() {
-        
-      }
-    </script>
-  </body>
+      <script type="module" src="./scripts/Data.ts" ></script>
+      <script type="module" src="./scripts/Serie.js" ></script>
+      <script type="module" src="./scripts/main.js"></script>
+    </body>
 </html>
